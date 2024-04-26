@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/g-gembala');
+</style>
+
+    <script>
+        function uncheckOthers(checkbox) {
+            var checkboxes = document.getElementsByName(checkbox.name);
+            checkboxes.forEach(function(cb) {
+                if (cb !== checkbox) {
+                    cb.checked = false;
+                }
+            });
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'g Gembala', sans-serif;
+                                                
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        } .button {
+            background-color: #ffc916;
+            color: white;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #faa628;
+        }
+
+        .dog-img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            background-color: #bcffbe;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Registrarse</h1>
+        <div class="dog-details"></div>
+        <p>Al ser parte de este sitio web contaras con beneficios, ademas que te permitira enterarte de las nuevas actualizaciones antes que cualquiera</p>
+    </header>
+    <div class="container">
+        <img class="dog-img" src="img/for.jpg" alt="Pepito">
+        <form action="procesar_adopcion.php" method="POST">
+            <label for="nombre">Nombre Completo:*</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Correo Electrónico:*</label>
+            <input type="email" id="email" name="email" required>
+            <label for="telefono">Teléfono de Contacto:*</label>
+            <input type="text" id="telefono" name="telefono" required>
+    
+
+            <label for="nombre">Ciudad:*</label>
+            <input type="text" id="ciudad" name="ciudad" required>
+
+            <label for="nombre">Colonia:*</label>
+            <input type="text" id="colonia" name="colonia" required>
+
+            <label for="nombre">Codigo postal:*</label>
+            <input type="text" id="codigo postal" name="codigo postal" required>
+
+            <p>¿Deseas recibir notificacion de las nuevas actualizaciones?</p>
+            <input type="checkbox" id="si" name="mascotas_anteriormente" value="si" onclick="uncheckOthers(this)">
+            <label for="si">Sí</label>
+            <input type="checkbox" id="no" name="mascotas_anteriormente" value="no" onclick="uncheckOthers(this)">
+            <label for="no">No</label><br>
+            <a href="confirmacion.html" class="button">Enviar solicitud </a>
+            
+
+        </form>
+    </div>
+</body>
+</html>
